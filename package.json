@@ -25,12 +25,14 @@
     "expo-web-browser": "~8.0.0",
     "firebase": "^7.7.0",
     "postinstall-js": "^0.6.0",
+    "prop-types": "^15.7.2",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-element": "^1.2.1",
     "react-native-elements": "^1.2.7",
     "react-native-elevated-view": "^0.0.6",
+    "react-native-firebase": "^5.6.0",
     "react-native-gesture-handler": "~1.5.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-picker-select": "^6.3.3",
@@ -39,7 +41,9 @@
     "react-native-web": "~0.11.7",
     "react-navigation": "~4.0.10",
     "react-navigation-stack": "~1.10.3",
-    "react-navigation-tabs": "~2.6.2"
+    "react-navigation-tabs": "~2.6.2",
+    "rxjs": "^6.5.4",
+    "rxjs-compat": "^6.5.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

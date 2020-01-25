@@ -19,7 +19,6 @@ import images from "./src/images";
 import { LinearGradient } from "expo-linear-gradient";
 import firebase from "firebase";
 import firebaseConfig from "./config/firebase";
-import ElevatedView from "react-native-elevated-view";
 
 // firebase.initializeApp(firebaseConfig);
 
