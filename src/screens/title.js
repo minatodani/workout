@@ -1,66 +1,45 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, Animated } from "react-native";
 // import { Input } from "react-native-elements";
 import { AppLoading, Font } from "expo";
 import { Asset } from "expo-asset";
-import fonts from "./src/fonts";
-import images from "./src/images";
+import fonts from "../fonts";
+import images from "../images";
+// import { delay } from "rxjs-compat/operator/delay";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
 class Title extends React.Component {
-  static defaultProps = {
-    skipLoadingScreen: false
-  };
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoadingComplete: false,
-      name: ""
-    };
-  }
-
-  loadResourcesAsync = async () => {
-    await Asset.loadAsync(object.keys(images).map(key => images[key]));
-    await Font.loadAsync(fonts);
-
-    return true;
-  };
-
   render() {
-    const { isLoadingComplete } = this.state;
-    const { skipLoadingScreen } = this.props;
+    const { navigate } = this.props.navigation;
 
-    if (!isLoadingComplete && !skipLoadingScreen) {
-      return (
-        <AppLoading
-          startAsync={this.loadResourcesAsync}
-          onError={error => console.warn(error)}
-          onFinish={() => this.setState({ isLoadingComplete: true })}
-        />
-      );
-    }
+    const move = () => navigate("Login1");
+    setTimeout(move, 3000);
+
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text
+      <SafeAreaView style={{ flex: 1, borderTopColor: "white" }}>
+        <View
           style={{
-            color: "black",
-            fontSize: 60,
-            fontFamily: "Avenir",
-            fontWeight: "bold"
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center"
           }}
         >
-          WORK
-        </Text>
-        <Text
-          style={{
-            color: "black",
-            fontSize: 60,
-            fontFamily: "Avenir",
-            fontWeight: "bold"
-          }}
-        >
-          OUT
-        </Text>
-      </View>
+          <Text style={styles.text}>WORK</Text>
+          <Text style={styles.text}>OUT</Text>
+        </View>
+      </SafeAreaView>
     );
   }
 }
+
+export default Title;
+
+const styles = StyleSheet.create({
+  text: {
+    color: "black",
+    fontSize: 60,
+    fontFamily: "Avenir",
+    fontWeight: "bold"
+  }
+});

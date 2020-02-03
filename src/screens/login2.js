@@ -1,13 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TextInput,
+  KeyboardAvoidingView
+} from "react-native";
 import { Input, Button } from "react-native-elements";
-import { AppLoading, Font } from "expo";
-import { Asset } from "expo-asset";
-import fonts from "./src/fonts";
-import images from "./src/images";
+// import { AppLoading, Font } from "expo";
+// import { Asset } from "expo-asset";
+// import fonts from "../fonts";
+// import images from "../images";
 import { LinearGradient } from "expo-linear-gradient";
 import RNPickerSelect, { defaultStyles } from "react-native-picker-select";
-import firebase from "./firebase";
+// import firebase from "./firebase";
 class Login2 extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +26,8 @@ class Login2 extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
+
     const placeholdersales = {
       label: "セールス先",
       value: null,
@@ -174,9 +183,10 @@ class Login2 extends React.Component {
                 }}
               >
                 <Button
-                  title="next"
+                  title="complete"
                   titleStyle={{ color: "rgba(90, 123, 247,1)" }}
                   buttonStyle={{ height: 50, backgroundColor: "white" }}
+                  onPress={() => navigate("Main")}
                 />
               </View>
             </View>

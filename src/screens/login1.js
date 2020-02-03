@@ -1,15 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TextInput
+  // KeyboardAvoidingView
+} from "react-native";
 import { Input, Button } from "react-native-elements";
-import { AppLoading, Font } from "expo";
-import { Asset } from "expo-asset";
-import fonts from "./src/fonts";
-import images from "./src/images";
+// import { AppLoading, Font } from "expo";
+// import { Asset } from "expo-asset";
+// import fonts from "../fonts";
+// import images from "../images";
 import { LinearGradient } from "expo-linear-gradient";
-import firebase from "firebase";
-import firebaseConfig from "./config/firebase";
+// import firebase from "firebase";
+// import firebaseConfig from "./config/firebase";
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 class Login1 extends React.Component {
   constructor(props) {
@@ -26,56 +33,57 @@ class Login1 extends React.Component {
     };
   }
 
-  handleSignUp = () => {
-    const {
-      email,
-      password,
-      username,
-      // address,
-      // phone,
-      // month,
-      // day,
-      year
-    } = this.state;
+  // handleSignUp = () => {
+  //   const {
+  //     email,
+  //     password,
+  //     username,
+  //     // address,
+  //     // phone,
+  //     // month,
+  //     // day,
+  //     year
+  //   } = this.state;
 
-    // firebaseでSignUp
-    // firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then(user => {
-    //     this.setState({ username: "", email: "", password: "" });
-    //     alert("success");
-    //     // 登録後のページへ遷移させる
-    //   })
-    //   .catch(error => alert(error));
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(function(user) {
-        user
-          .updateProfile({
-            user: username
-          })
-          .then(
-            function() {
-              // Update successful.
-              alert("success");
-            },
-            function(error) {
-              // An error happened.
-              alert(error);
-            }
-          );
-      })
-      .catch(function(error) {
-        // Handle Errors here.
-        alert(error);
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
-  };
+  //   // firebaseでSignUp
+  //   // firebase
+  //   //   .auth()
+  //   //   .createUserWithEmailAndPassword(email, password)
+  //   //   .then(user => {
+  //   //     this.setState({ username: "", email: "", password: "" });
+  //   //     alert("success");
+  //   //     // 登録後のページへ遷移させる
+  //   //   })
+  //   //   .catch(error => alert(error));
+  //   firebase
+  //     .auth()
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then(function(user) {
+  //       user
+  //         .updateProfile({
+  //           user: username
+  //         })
+  //         .then(
+  //           function() {
+  //             // Update successful.
+  //             alert("success");
+  //           },
+  //           function(error) {
+  //             // An error happened.
+  //             alert(error);
+  //           }
+  //         );
+  //     })
+  //     .catch(function(error) {
+  //       // Handle Errors here.
+  //       alert(error);
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //     });
+  // };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <LinearGradient
         colors={["rgba(96, 195, 255,1)", "rgba(90, 123, 247,1)"]}
@@ -138,14 +146,14 @@ class Login1 extends React.Component {
                     onChangeText={email => this.setState({ email })}
                   />
                 </View>
-                <View style={{ flex: 1 }}>
+                {/* <View style={{ flex: 1 }}>
                   <TextInput
                     placeholder="パスワード"
                     placeholderTextColor="#D0D0D0"
                     style={styles.input}
                     onChangeText={password => this.setState({ password })}
                   />
-                </View>
+                </View> */}
                 <View style={{ flex: 1 }}>
                   <TextInput
                     placeholder="電話番号"
@@ -197,7 +205,7 @@ class Login1 extends React.Component {
                   title="next"
                   titleStyle={{ color: "rgba(90, 123, 247,1)" }}
                   buttonStyle={{ height: 50, backgroundColor: "white" }}
-                  onPress={this.handleSignUp}
+                  onPress={() => navigate("Login2")}
                 />
               </View>
             </View>
