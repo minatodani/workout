@@ -4,9 +4,10 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
-  TextInput
-  // KeyboardAvoidingView
+  TextInput,
+  KeyboardAvoidingView
 } from "react-native";
+import { Header } from "react-navigation-stack";
 import { Input, Button } from "react-native-elements";
 // import { AppLoading, Font } from "expo";
 // import { Asset } from "expo-asset";
@@ -118,7 +119,10 @@ class Login1 extends React.Component {
             </View>
 
             <View style={{ width: 250, flex: 13 }}>
-              <View style={{ flex: 8, position: "relative", top: 12 }}>
+              <KeyboardAvoidingView
+                // behavior="padding"
+                style={{ flex: 10 }}
+              >
                 <View style={{ flex: 1 }}>
                   <TextInput
                     placeholder="お名前"
@@ -146,14 +150,6 @@ class Login1 extends React.Component {
                     onChangeText={email => this.setState({ email })}
                   />
                 </View>
-                {/* <View style={{ flex: 1 }}>
-                  <TextInput
-                    placeholder="パスワード"
-                    placeholderTextColor="#D0D0D0"
-                    style={styles.input}
-                    onChangeText={password => this.setState({ password })}
-                  />
-                </View> */}
                 <View style={{ flex: 1 }}>
                   <TextInput
                     placeholder="電話番号"
@@ -164,41 +160,44 @@ class Login1 extends React.Component {
                   />
                 </View>
 
-                <View style={{ flexDirection: "row", flex: 1 }}>
-                  <TextInput
-                    placeholder="年"
-                    keyboardType="numeric"
-                    placeholderTextColor="#D0D0D0"
-                    // autoFocus="true"
-                    style={styles.bir}
-                    onChangeText={year => this.setState({ year })}
+                <View style={{ flex: 1 }}>
+                  <View style={{ flexDirection: "row", flex: 1 }}>
+                    <TextInput
+                      placeholder="年"
+                      keyboardType="numeric"
+                      placeholderTextColor="#D0D0D0"
+                      // autoFocus="true"
+                      style={styles.bir}
+                      onChangeText={year => this.setState({ year })}
 
-                    // style={{ backgroundColor: "red" }}
-                  />
-                  <View style={{ flex: 1 }}></View>
-                  <TextInput
-                    placeholder="月"
-                    keyboardType="numeric"
-                    placeholderTextColor="#D0D0D0"
-                    // autoFocus="true"
-                    style={styles.bir}
-                    onChangeText={month => this.setState({ month })}
-                  />
-                  <View style={{ flex: 1 }}></View>
-                  <TextInput
-                    placeholder="日"
-                    keyboardType="numeric"
-                    placeholderTextColor="#D0D0D0"
-                    // autoFocus="true"
-                    style={styles.bir}
-                    onChangeText={day => this.setState({ day })}
-                  />
+                      // style={{ backgroundColor: "red" }}
+                    />
+                    <View style={{ flex: 1 }}></View>
+                    <TextInput
+                      placeholder="月"
+                      keyboardType="numeric"
+                      placeholderTextColor="#D0D0D0"
+                      // autoFocus="true"
+                      style={styles.bir}
+                      onChangeText={month => this.setState({ month })}
+                    />
+                    <View style={{ flex: 1 }}></View>
+                    <TextInput
+                      placeholder="日"
+                      keyboardType="numeric"
+                      placeholderTextColor="#D0D0D0"
+                      // autoFocus="true"
+                      style={styles.bir}
+                      onChangeText={day => this.setState({ day })}
+                    />
+                  </View>
                 </View>
-              </View>
+              </KeyboardAvoidingView>
               <View
                 style={{
-                  flex: 5,
-                  justifyContent: "center"
+                  flex: 4,
+                  justifyContent: "center",
+                  paddingBottom: 30
                 }}
               >
                 <Button

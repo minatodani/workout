@@ -54,18 +54,11 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    console.disableYellowBox;
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
-        <Text>please wait</Text>
-      </View>
-    );
+    const memoList = [];
+
+    this.setState({
+      memoList: this.state.memoList
+    });
   }
 
   componentWillMount() {
@@ -92,7 +85,8 @@ class Main extends React.Component {
         this.state.memoList.push(
           <TouchableHighlight
             key={abc}
-            onPress={() => navigate("Detail")}
+            // onPress={() => navigate("Demo", { abc })}
+            onPress={() => navigate("Detail", { abc })}
             underlayColor={"rgba(96, 195, 255,0)"} // #角丸を設定した場合は、背景色を同じ色にしないとおかしく見える
             activeOpacity={0.7}
             style={{
@@ -107,7 +101,7 @@ class Main extends React.Component {
               <View style={styles.left}>
                 <View style={{ flex: 1, marginTop: 17, marginLeft: 15 }}>
                   <Image
-                    source={{ uri: abc[6][1] }}
+                    source={{ uri: abc[7][1] }}
                     style={styles.pict}
                     resizeMode="cover"
                     // resizeMethod="scale"
@@ -127,17 +121,17 @@ class Main extends React.Component {
                       marginLeft: 0
                     }}
                   >
-                    {abc[8][1]}
+                    {abc[9][1]}
                   </Text>
                 </View>
                 <View>
                   <Text style={{ color: "#707070", height: 75, width: 240 }}>
-                    {abc[5][1]}
+                    {abc[6][1]}
                   </Text>
                 </View>
                 <View style={styles.cercle}>
                   <Text style={{ margin: 3, color: "#707070", fontSize: 11 }}>
-                    {abc[3][1]}
+                    {abc[4][1]}
                   </Text>
                 </View>
                 <View>

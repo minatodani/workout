@@ -39,13 +39,15 @@ class Detail extends React.Component {
             <View style={styles.sub_hole}>
               <View style={styles.first}>
                 <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-                  顧客管理ソフト[ sales v ]
+                  {this.props.navigation.state.params.abc[9][1]}
                 </Text>
               </View>
               <View style={styles.second}>
                 <View>
                   <Image
-                    source={require("../../assets/images/the-honest-company-iop1VUrHF_U-unsplash.jpg")}
+                    source={{
+                      uri: this.props.navigation.state.params.abc[7][1]
+                    }}
                     style={styles.pict}
                   />
                 </View>
@@ -60,7 +62,7 @@ class Detail extends React.Component {
                       <Text
                         style={{ margin: 3, color: "#707070", fontSize: 11 }}
                       >
-                        ストック
+                        {this.props.navigation.state.params.abc[4][1]}
                       </Text>
                     </View>
                   </View>
@@ -68,7 +70,7 @@ class Detail extends React.Component {
                     <Text
                       style={{ fontSize: 38, color: "red", fontWeight: "bold" }}
                     >
-                      4000
+                      {this.props.navigation.state.params.abc[3][1]}
                     </Text>
                     <Text style={{ marginLeft: 160, fontSize: 14 }}>/ 月</Text>
                   </View>
@@ -77,9 +79,7 @@ class Detail extends React.Component {
               <View style={styles.pro}>
                 <Text style={styles.pra}>製品紹介</Text>
                 <Text style={styles.cont}>
-                  お客様の業務効率を改善します。膨大な事務処理を一手に担うツール[
-                  sales v
-                  ]です。従来製品とは違い、直感的に入力ができます。わかりやすいシステム設計で誰でも扱うことができます。
+                  {this.props.navigation.state.params.abc[6][1]}
                 </Text>
               </View>
               <View style={styles.border}></View>
@@ -87,13 +87,13 @@ class Detail extends React.Component {
                 <Text style={styles.pra}>特徴</Text>
                 <View style={styles.cont}>
                   <Text style={{ color: "#707070" }}>
-                    ・ 誰にでも扱いやすいツール
+                    ・ {this.props.navigation.state.params.abc[12][1][0]}
                   </Text>
                   <Text style={{ color: "#707070", marginTop: 10 }}>
-                    ・ 直感的に操作できる
+                    ・ {this.props.navigation.state.params.abc[12][1][1]}
                   </Text>
                   <Text style={{ color: "#707070", marginTop: 10 }}>
-                    ・約1000万人の顧客を管理できる
+                    ・ {this.props.navigation.state.params.abc[12][1][2]}
                   </Text>
                 </View>
               </View>
@@ -101,33 +101,36 @@ class Detail extends React.Component {
               <View style={styles.pro}>
                 <Text style={styles.pra}>価格</Text>
                 <Text style={styles.fee_det}>
-                  導入コスト100万円、ランニングコスト月2万、その他オプション料あり
+                  {this.props.navigation.state.params.abc[8][1]}
                 </Text>
               </View>
               <View style={styles.border}></View>
               <View style={styles.pro}>
                 <Text style={styles.pra}>希望するセールス先</Text>
-                <Text style={styles.fee_det}>各種営業会社</Text>
+                <Text style={styles.fee_det}>
+                  {" "}
+                  {this.props.navigation.state.params.abc[5][1]}
+                </Text>
               </View>
               <View style={styles.border}></View>
               <View style={styles.pro}>
                 <Text style={styles.pra}>対象エリア</Text>
                 <Text style={styles.fee_det}>
-                  全国（ただし訪問支援は福岡市内に限る。）
+                  {this.props.navigation.state.params.abc[0][1]}
                 </Text>
               </View>
               <View style={styles.border}></View>
               <View style={styles.pro}>
                 <Text style={styles.pra}>報酬支払い条件</Text>
                 <Text style={styles.fee_det}>
-                  約定に至った場合に、月々4000円をお支払いいたします。ただし、解約された場合には、翌月からはお支払いがありません。
+                  {this.props.navigation.state.params.abc[2][1]}
                 </Text>
               </View>
               <View style={styles.border}></View>
-              <View style={styles.pro}>
+              {/* <View style={styles.pro}>
                 <Text style={styles.pra}>約定率</Text>
                 <Text style={styles.fee_det}>43.1%</Text>
-              </View>
+              </View> */}
             </View>
 
             <TouchableHighlight
