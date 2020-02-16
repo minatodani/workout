@@ -51,11 +51,11 @@ var config = {
 //       console.log(error);
 //     });
 // };
-class Demo extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      //   username: "",
       email: "",
       password: ""
     };
@@ -63,7 +63,7 @@ class Demo extends React.Component {
 
   handleSignUp = () => {
     const {
-      username,
+      //   username,
       email,
       password
 
@@ -73,22 +73,18 @@ class Demo extends React.Component {
       // day,
     } = this.state;
 
-    console.log(username);
     console.log(email);
 
-    if (username == "") {
-      alert("お名前を入力してください。");
-    } else if (email == "") {
+    if (email == "") {
       alert("メールアドレスを入力してください。");
     } else if (password == "") {
       alert("パスワードを入力してください。");
     } else {
       const db = firebase.auth();
       const { navigate } = this.props.navigation;
-
-      db.createUserWithEmailAndPassword(email, password)
+      db.signInWithEmailAndPassword(email, password)
         .then(function() {
-          alert("success");
+          alert("Welcome");
           const move = () => navigate("Main");
           setTimeout(move, 0);
         })
@@ -100,15 +96,19 @@ class Demo extends React.Component {
           // ...
         });
 
-      // .catch(function(error) {
-      //   // Handle Errors here.
-      //   var errorCode = error.code;
-      //   var errorMessage = error.message;
-      //   alert(
-      //     "正しく入力されていません。\n*パスワードは６桁以上の英数字です。"
-      //   );
-      //   // ...
-      // });
+      //   db.signInWithEmailAndPassword(email, password)
+      //     .catch(function(error) {
+      //       // Handle Errors here.
+      //       alert("正しく入力されていません。");
+      //       const move = () => navigate("Login");
+      //       setTimeout(move, 0);
+      //       // ...
+      //     })
+      //     .then(function() {
+      //       alert("Welcome");
+      //       const move = () => navigate("Main");
+      //       setTimeout(move, 0);
+      //     });
     }
 
     // firebase
@@ -201,9 +201,7 @@ class Demo extends React.Component {
                 bottom: 10
               }}
             >
-              <Text style={{ color: "white", fontSize: 24 }}>
-                ユーザー登録　
-              </Text>
+              <Text style={{ color: "white", fontSize: 24 }}>ログイン</Text>
             </View>
 
             <View style={{ width: 300, flex: 10 }}>
@@ -211,16 +209,7 @@ class Demo extends React.Component {
                 // behavior="padding"
                 style={{ flex: 6 }}
               >
-                <View style={{ flex: 2 }}></View>
                 {/* <View style={{ flex: 1, backgroundColor: "green" }}></View> */}
-                <View style={{ flex: 2 }}>
-                  <TextInput
-                    placeholder="お名前"
-                    placeholderTextColor="#D0D0D0"
-                    style={styles.input1}
-                    onChangeText={username => this.setState({ username })}
-                  />
-                </View>
                 <View style={{ flex: 2 }}></View>
                 {/* <View style={{ flex: 1, backgroundColor: "green" }}></View> */}
                 <View style={{ flex: 2 }}>
@@ -261,6 +250,25 @@ class Demo extends React.Component {
                   }}
                   onPress={() => this.handleSignUp()}
                 />
+                <View style={{ height: 20 }}></View>
+                <TouchableHighlight onPress={() => navigate("Demo")}>
+                  <View
+                    style={{
+                      borderBottomWidth: 1,
+                      borderBottomColor: "white"
+                    }}
+                  >
+                    <Text
+                      style={{
+                        borderBottomWidth: 1,
+                        borderBottomColor: "white",
+                        color: "white"
+                      }}
+                    >
+                      新規ユーザーはこちら
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               </View>
             </View>
           </View>
@@ -269,7 +277,7 @@ class Demo extends React.Component {
     );
   }
 }
-export default Demo;
+export default Login;
 
 const styles = StyleSheet.create({
   title: {

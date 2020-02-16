@@ -36,8 +36,9 @@ var config = {
   appId: "1:1089102552787:web:2d42d1d32b92c64f7c3e26",
   measurementId: "G-8FHFXPXHHN"
 };
-firebase.initializeApp(config);
-// // Initialize Firebase
+!firebase.apps.length
+  ? firebase.initializeApp(config).firestore()
+  : firebase.app().firestore(); // // Initialize Firebase
 // firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
