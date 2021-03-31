@@ -4101,10 +4101,20 @@ expo-font@~8.0.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-haptics@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-9.0.0.tgz#a01605634ff9b8a4dc8023f5430278be874f525b"
+  integrity sha512-jBYgclyBVuGiqFPxdYSpIE5OEpWodu1B8fsqDLVIOWjdACnKVGsaBpSF6W4Xq0wVRvoak7C4Oz7ISV08rtPMOw==
+
 expo-keep-awake@~8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.0.0.tgz#f9200a876a5db86e3f0aec8843428a918cdc08d6"
   integrity sha512-l+672FVu9qqBEFKSXL1jrsQoDky7gTJX6WYLTWc0/hJuTMhVowWUHsOh/L9vxJEt23QtqLyszQ+hBqjQnWvICQ==
+
+expo-linear-gradient@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-9.0.0.tgz#7abb571e72b34a0d09241b6a7338c2c0c7dc3b26"
+  integrity sha512-d01mSCgGth6Q32/UnXbsXvTBe0rtYdEiVEAJLFUeS7TjUmS6GvZzw4UyglcSG02HpU+/uDjwjIKFm5j6DrMH/w==
 
 expo-linear-gradient@~8.0.0:
   version "8.0.0"
@@ -7516,6 +7526,14 @@ react-native-gesture-handler@~1.5.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-gradient-buttons@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-gradient-buttons/-/react-native-gradient-buttons-2.0.2.tgz#cbf944aaddcf0cac94aa521d3d0e67b4b688847f"
+  integrity sha512-XAuyLXSZGZSmFD7stLkoaKVUH6EY6QLU2pSp60vDXafu0VKkVUXH4tdooaYis8o2Zx7KyM22u1w3C3iC5oTduw==
+  dependencies:
+    expo-haptics "^9.0.0"
+    expo-linear-gradient "^9.0.0"
+
 react-native-linear-gradient@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
@@ -9307,9 +9325,9 @@ xtend@~4.0.1:
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
 y18n@^3.2.0, y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
